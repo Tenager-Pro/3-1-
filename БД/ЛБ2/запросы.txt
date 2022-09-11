@@ -1,0 +1,32 @@
+select 
+financially_responsible_person.name as "Сотрудник",
+sum(objects.balance) as "Балансовая стоимость"
+From
+objects  left join financially_responsible_person on objects.financially_responsible_person_id=financially_responsible_person.id
+
+group by "Сотрудник"
+
+select 
+financially_responsible_person.name as "Сотрудник",
+sum(objects.balance) as "Балансовая стоимость"
+From
+objects  right join financially_responsible_person on objects.financially_responsible_person_id=financially_responsible_person.id
+
+group by "Сотрудник"
+
+
+select 
+financially_responsible_person.name as "Сотрудник"
+From
+objects
+where 
+objects.financially_responsible_person_id = (
+select
+financially_responsible_person.id
+from
+financially_responsible_person
+where 
+financially_responsible_person.name="Петров"
+)
+
+
