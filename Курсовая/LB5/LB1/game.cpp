@@ -3,23 +3,25 @@
 #include <iostream>
 #include <ctime>
 #include "game.h"
+#include "snake.h"
+#include "food.h"
 
-    void levelOne(int, int);
-    void levelTwo(int, int);
-    void levelThree(int, int);
-    int random(int, int);
-    int level = 1;
+    Snake snake(1);
+    Game game(1);
+    Food food;
+   
+    
+    
     bool length_inc = false;
     bool seedflag = false;
     extern int score;
     extern bool game_over;
-    bool food = false;
+    
     int rows = 0, columns = 0;
     int sDirection = RIGHT;
-    int foodx, foody;
-    int posx[MAX + 1] = { 4,3,2,1,0,-1,-1 };
-    int posy[MAX + 1] = { 10,10,10,10,10,10,10 };
-    int length = 7;// длина змеи
+
+   
+    
 
     void initGrid(int x, int y)
     {
@@ -33,7 +35,7 @@
         {
             for (int j = 0; j < rows; j++)
             {
-                switch (level) {
+                switch (game.level) {
                 case 1:
                     levelOne(i, j);
                     break;
@@ -52,12 +54,13 @@
 
     void draw_snake()//рисуем змею
     {
-        for (int i = length - 1; i > 0; i--)
-        {
-            posx[i] = posx[i - 1];
-            posy[i] = posy[i - 1];
-        }
-        for (int i = 0; i < length; i++)
+        
+        for (int i = snake.length - 1; i > 0; i--)
+            {
+                snake.posx[i] = snake.posx[i - 1];
+                snake.posy[i] = snake.posy[i - 1];
+            }
+        for (int i = 0; i < snake.length; i++)
         {
             glColor3f(1.0, 1.0, 0.0);//цвет тела
             if (i == 0)
@@ -67,116 +70,119 @@
                 {
                 case UP:
                     if (GetAsyncKeyState(VK_LSHIFT) || GetAsyncKeyState(VK_RSHIFT)) {
-                        posy[i] += 2;
+                        snake.posy[i] += 2;
                     }
                     else {
-                        posy[i]++;
+                        snake.posy[i]++;
                     }
 
                     break;
                 case DOWN:
                     if (GetAsyncKeyState(VK_LSHIFT) || GetAsyncKeyState(VK_RSHIFT)) {
-                        posy[i] -= 2;
+                        snake.posy[i] -= 2;
                     }
                     else {
-                        posy[i]--;
+                        snake.posy[i]--;
                     }
                     break;
                 case RIGHT:
                     if (GetAsyncKeyState(VK_LSHIFT) || GetAsyncKeyState(VK_RSHIFT)) {
-                        posx[i] += 2;
+                        snake.posx[i] += 2;
                     }
                     else {
-                        posx[i]++;
+                        snake.posx[i]++;
                     }
 
                     break;
                 case LEFT:
                     if (GetAsyncKeyState(VK_LSHIFT) || GetAsyncKeyState(VK_RSHIFT)) {
-                        posx[i] -= 2;
+                        snake.posx[i] -= 2;
                     }
                     else {
-                        posx[i]--;
+                        snake.posx[i]--;
                     }
                     break;
                 }
 
-
-                if (posx[i] <= 0 ||
-                    posx[i] >= columns - 1 ||
-                    posy[i] <= 0 ||
-                    posy[i] >= rows - 1 &&
-                    level == 1 ||
-                    (posx[i] <= columns - 6 && posx[i] >= columns - 35 && posy[i] == 5) ||
-                    (posx[i] <= columns - 6 && posx[i] >= columns - 35 && posy[i] == 15) ||
-                    (posx[i] <= columns - 6 && posx[i] >= columns - 35 && posy[i] == 30))//выход за границы
+            
+                if (
+                    
+                    
+                    snake.posx[i] <= 0 ||
+                    snake.posx[i] >= columns - 1 ||
+                    snake.posy[i] <= 0 ||
+                    snake.posy[i] >= rows - 1 &&
+                    game.level == 1 ||
+                    (snake.posx[i] <= columns - 6 && snake.posx[i] >= columns - 35 && snake.posy[i] == 5) ||
+                    (snake.posx[i] <= columns - 6 && snake.posx[i] >= columns - 35 && snake.posy[i] == 15) ||
+                    (snake.posx[i] <= columns - 6 && snake.posx[i] >= columns - 35 && snake.posy[i] == 30))//выход за границы
                 {
                     game_over = true;
                 }
-                else if (posx[i] <= 0 ||
-                    posx[i] >= columns - 1 ||
-                    posy[i] <= 0 ||
-                    posy[i] >= rows - 1 &&
-                    level == 2) 
+                else if (snake.posx[i] <= 0 ||
+                    snake.posx[i] >= columns - 1 ||
+                    snake.posy[i] <= 0 ||
+                    snake.posy[i] >= rows - 1 &&
+                    game.level == 2)
                 {
                     game_over = true;
                 }
-                else if (posx[i] <= 0 ||
-                    posx[i] >= columns - 1 ||
-                    posy[i] <= 0 ||
-                    posy[i] >= rows - 1 &&
-                    level == 3) 
+                else if (snake.posx[i] <= 0 ||
+                    snake.posx[i] >= columns - 1 ||
+                    snake.posy[i] <= 0 ||
+                    snake.posy[i] >= rows - 1 &&
+                    game.level == 3)
                 {
                     game_over = true;
                 }
-                else if (posx[i] == foodx && posy[i] == foody)// еда
+                else if (snake.posx[i] == food.x && snake.posy[i] == food.y)// еда
                 {
-                    food = false;
+                    food.flag = false;
                     score++;
-                    if (length <= MAX)
+                    if (snake.length <= MAX)
                         length_inc = true;
-                    if (length == MAX)
+                    if (snake.length == MAX)
                     {
-                        level++;
-                        displayResourceMessageBox(0, score);
+                        game.level++;
+                        
                     }
 
                 }
-                for (int j = 1; j < length; j++)
+                for (int j = 1; j < snake.length; j++)
                 {
-                    if (posx[j] == posx[0] && posy[j] == posy[0])
+                    if (snake.posx[j] == snake.posx[0] && snake.posy[j] == snake.posy[0])
                         game_over = true;
                 }
             }
             glBegin(GL_QUADS);
-            glVertex2d(posx[i], posy[i]);
-            glVertex2d(posx[i] + 1, posy[i]);
-            glVertex2d(posx[i] + 1, posy[i] + 1);
-            glVertex2d(posx[i], posy[i] + 1);
+            glVertex2d(snake.posx[i], snake.posy[i]);
+            glVertex2d(snake.posx[i] + 1, snake.posy[i]);
+            glVertex2d(snake.posx[i] + 1, snake.posy[i] + 1);
+            glVertex2d(snake.posx[i], snake.posy[i] + 1);
             glEnd();
         }
         if (length_inc)
         {
-            length++;
+            snake.length++;
             length_inc = false;
         }
     }
 
     void draw_food()//рисунок еды
     {
-        if (!food)
+        if (!food.flag)
         {
-            foodx = random(2, columns - 2);
-            foody = random(2, rows - 2);
-            std::cout << foodx << " " << foody << std::endl;
-            food = true;
+            food.x = random(2, columns - 2);
+            food.y = random(2, rows - 2);
+            std::cout << food.x << " " << food.y << std::endl;
+            food.flag = true;
         }
         //рисует квадрат еды
         glBegin(GL_QUADS);
-        glVertex2d(foodx, foody);
-        glVertex2d(foodx + 1, foody);
-        glVertex2d(foodx + 1, foody + 1);
-        glVertex2d(foodx, foody + 1);
+        glVertex2d(food.x, food.y);
+        glVertex2d(food.x + 1, food.y);
+        glVertex2d(food.x + 1, food.y + 1);
+        glVertex2d(food.x, food.y + 1);
         glEnd();
     }
 
@@ -270,7 +276,6 @@
 
 
 
-
     int random(int _min, int _max)
     {
         if (!seedflag)
@@ -283,22 +288,4 @@
         return _min + rand() % (_max - _min);
     }
 
-    void displayResourceMessageBox(int numMesage, int score) {
-        std::cout << "\nScore: " << score;
-        char text[50] = "Score: ";
-
-        int msgboxID = MessageBox(NULL,
-            (LPCWSTR)score,
-            (LPCTSTR)L"Game over",
-            MB_YESNO | MB_OKCANCEL | MB_ICONQUESTION);
-        switch (msgboxID)
-        {
-        case IDTRYAGAIN:
-            break;
-        case IDCANCEL:
-            break;
-        default:
-            break;
-        }
-
-    }
+  

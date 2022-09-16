@@ -1,0 +1,21 @@
+D:\DoodleJump-c-sharp-master\DoodleJump\bin\Debug\DoodleJump.exe.config
+D:\DoodleJump-c-sharp-master\DoodleJump\bin\Debug\DoodleJump.exe
+D:\DoodleJump-c-sharp-master\DoodleJump\bin\Debug\DoodleJump.pdb
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.csproj.AssemblyReference.cache
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.Form1.resources
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.Properties.Resources.resources
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.csproj.GenerateResource.cache
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.csproj.CoreCompileInputs.cache
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.exe
+D:\DoodleJump-c-sharp-master\DoodleJump\obj\Debug\DoodleJump.pdb
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\bin\Debug\DoodleJump.exe.config
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\bin\Debug\DoodleJump.exe
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\bin\Debug\DoodleJump.pdb
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.csproj.AssemblyReference.cache
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.Form1.resources
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.Properties.Resources.resources
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.csproj.GenerateResource.cache
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.csproj.CoreCompileInputs.cache
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.exe
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.pdb
+D:\3 курс 1 семестр\Курсовая\dudle jump\DoodleJump\obj\Debug\DoodleJump.Form2.resources

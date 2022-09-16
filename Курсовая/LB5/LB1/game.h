@@ -7,10 +7,23 @@
 #define DOWN -1
 #define LEFT -2
 
+class Game {
+public:
+	int level;
+	Game(int newLevel) {
+		level = newLevel;
+	}
+
+
+};
 void initGrid(int, int);
 void draw_grid();
 void draw_food();
 void draw_snake();
-void displayResourceMessageBox(int,int);
+
+void levelOne(int, int);
+void levelTwo(int, int);
+void levelThree(int, int);
+int random(int, int);
 #endif // GAME_H_INCLUDED
 

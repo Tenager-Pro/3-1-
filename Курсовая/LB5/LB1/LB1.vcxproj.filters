@@ -29,5 +29,14 @@
     <ClInclude Include="player.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="snake.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="food.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

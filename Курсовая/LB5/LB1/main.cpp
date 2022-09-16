@@ -7,6 +7,8 @@
 #include "game.h"
 #include "player.h"
 
+
+
 #define ROWS 40.0 //кол-во строк
 #define COLUMNS 40.0 //кол-во колонок
     Player game;
@@ -42,20 +44,18 @@
             switch (num) {
             case 1:
                 glutInit(&argc, argv);
-                std::cout << game_over;
+                
                 glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
                 glutInitWindowPosition(10, 10);
                 glutInitWindowSize(800, 800); // размер окна
                 glutCreateWindow("Змейка"); // название окна
-
-
                 glutDisplayFunc(display_callback);
                 glutReshapeFunc(reshape_callback);
                 glutSpecialFunc(input_callback);
                 glutTimerFunc(100, timer_callback, 0);
                 init();
                 glutMainLoop();
-
+                std::cout << "game_over";
 
 
                 break;
@@ -106,7 +106,8 @@
         if (game_over) {
             game.setPoints(score);
             //sortPlayers(game);
-            glutDestroyWindow(glutGetWindow());
+            glutGetWindow();
+            glutIconifyWindow();
         }
         glClear(GL_COLOR_BUFFER_BIT);
         glLoadIdentity();
