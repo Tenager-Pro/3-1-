@@ -20,13 +20,13 @@
         <div class="menu">
             
             <h1>Menu</h1>
-            
+            <nav>
                 <ul>
-                    <li><a href="program.php">Телепрограмма</a></li> 
+                    <li><a href="program.html">Телепрограмма</a></li> 
                     <li><a href="company.html">О компании</a></li>
                     <li><a href="#">Контакты</a></li> 
                 </ul>
-            <a href="authorithation.php">Войти</a>
+            </nav>
         </div>
         <div class="list"> 
             <table border="1" width="100%" cellpadding="5">

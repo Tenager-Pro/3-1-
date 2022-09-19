@@ -1,0 +1,18 @@
+#game{
+    width: 300px;
+    height: 300px;
+    
+    background: rebeccapurple;
+}
+.block{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 1px solid white;
+    box-sizing: border-box;
+    line-height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 70px;
+    text-transform: uppercase;
+}
