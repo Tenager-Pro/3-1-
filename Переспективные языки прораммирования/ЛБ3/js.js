@@ -72,7 +72,7 @@ window.onload=function(){
                 for(let j=0;j<(x);j++){
                     if(x*(j)<i<(x*(j+1))){
                         sum1X[j]+=mag[i];
-                        console.log(sumX[j]);
+                        
                         if(sum1X[j]==15) flag1=true;
                     }
                 }
