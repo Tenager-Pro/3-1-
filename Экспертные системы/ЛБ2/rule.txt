@@ -1,0 +1,89 @@
+(defrule rule1
+(train (name ?x)(speed ?y))
+=>
+(printout t ?x "'s speed =" ?y crlf))
+
+(defrule rule2
+(train (name ?x)(country ?y))
+(test (eq ?y "Япония"))
+=>
+(printout t ?x " constructed by Japan"crlf))
+
+(defrule rule3
+(train (name ?x)(speed ?y))
+(test (>= ?y 300))
+=>
+(printout t ?x " speed more 300"crlf))
+
+(defrule rule4
+(train (name ?x)(speed ?y)(contain ?z))
+(test (and (>= ?y 300)(>= ?z 600)))
+=>
+(printout t ?x " speed more 300 and contain more 600"crlf))
+
+(defrule rule5
+(train (name ?x)(quantity ?y)(contain ?z))
+(test (or (>= ?y 8)(>= ?z 600)))
+=>
+(printout t ?x " quantity more 8 or contain more 600"crlf))
+
+(defrule rule6
+(train (name ?x)(country ?y))
+(test (not (eq ?y "Япония")))
+=>
+(printout t ?x " constructed by not Japan"crlf))
+
+(defrule rule7
+(exists (train (quantity 9)))
+=>
+(printout t "Train quantity 9" crlf))
+
+(deftemplate tasted_train
+(slot name(type string))
+)
+
+(deffacts train_tested
+(tasted_train (name "Shanghai Maglev"))
+   (tasted_train (name "Shinkansen"))
+   (tasted_train (name "Frecciarossa"))
+   (tasted_train (name "RENFE"))
+   (tasted_train (name "Haramain"))
+   (tasted_train (name "Deutsche Bahn ICE"))
+   (tasted_train (name "Korail"))
+   (tasted_train (name "Eurostar e320"))
+   (tasted_train (name "Thalys"))
+   (tasted_train (name "Сапсан")
+)
+
+(defrule rule8
+(forall 
+(train (name ?x))
+(tasted_train (name ?x))
+)
+=>
+(printout t "Train tested" crlf))
+
+(defrule rule9
+(logical
+(tasted_train (name "Korail"))
+)
+=>
+(assert (tasted_train(name "Korail 2")))
+
+(defrule rule10
+(train (name ?x)(speed ?y))
+(test (not (>= ?y 300)))
+=>
+(printout t ?x " speed not more 300"crlf))
+
+(defrule rule11
+(train (name ?x)(long ?y))
+(test (not (>= ?y 220)))
+=>
+(printout t ?x " long not more 220"crlf))
+
+(defrule rule12
+(train (name ?x)(speed ?y)(contain ?z)(quantity ?q))
+(test (or(>= ?y 290)(and(>= ?z 490)(>= ?q 10))))
+=>
+(printout t ?x " the best train"crlf))
