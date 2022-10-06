@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "CX+4MS+j/HbNVmSNqhS2SELap4P7n46DeAgIuf8lwh9CKRk/6YIHBRD65vXVIN1KuQW7fk+gh3FPwOrn+u+JQQ==",
+  "success": true,
+  "projectFilePath": "D:\\3 курс 1 семестр\\БД\\ДР\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\artem\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\firebirdsql.data.firebirdclient\\9.0.2\\firebirdsql.data.firebirdclient.9.0.2.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\lcpi.data.oledb\\1.25.2.4577\\lcpi.data.oledb.1.25.2.4577.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\lcpi.lib\\2.14.0.1843\\lcpi.lib.2.14.0.1843.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512"
+  ],
+  "logs": []
+}

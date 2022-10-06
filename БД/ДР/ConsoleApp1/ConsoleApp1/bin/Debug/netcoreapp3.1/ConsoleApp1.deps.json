@@ -1,0 +1,112 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "FirebirdSql.Data.FirebirdClient": "9.0.2",
+          "lcpi.data.oledb": "1.25.2.4577"
+        },
+        "runtime": {
+          "ConsoleApp1.dll": {}
+        }
+      },
+      "Dapper/2.0.123": {
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
+          }
+        }
+      },
+      "FirebirdSql.Data.FirebirdClient/9.0.2": {
+        "runtime": {
+          "lib/netstandard2.1/FirebirdSql.Data.FirebirdClient.dll": {
+            "assemblyVersion": "9.0.2.0",
+            "fileVersion": "9.0.2.0"
+          }
+        }
+      },
+      "lcpi.data.oledb/1.25.2.4577": {
+        "dependencies": {
+          "lcpi.lib": "2.14.0.1843"
+        },
+        "runtime": {
+          "lib/netstandard2.1/lcpi.data.oledb.nets2_1.dll": {
+            "assemblyVersion": "1.25.2.4577",
+            "fileVersion": "1.25.2.4577"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.1/ru/lcpi.data.oledb.nets2_1.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "lcpi.lib/2.14.0.1843": {
+        "runtime": {
+          "lib/netstandard2.1/lcpi.lib.nets2_1.dll": {
+            "assemblyVersion": "2.14.0.1843",
+            "fileVersion": "2.14.0.1843"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.1/ru/lcpi.lib.nets2_1.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.7.0": {}
+    }
+  },
+  "libraries": {
+    "ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
+    },
+    "FirebirdSql.Data.FirebirdClient/9.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0fm8F5JOGCJWs8NakWv8l//zwMbwUzl6w8fBsnkK6O2aBTmJKud8PL661h78w4MbrSqP7811mG/7AGRyICdUiw==",
+      "path": "firebirdsql.data.firebirdclient/9.0.2",
+      "hashPath": "firebirdsql.data.firebirdclient.9.0.2.nupkg.sha512"
+    },
+    "lcpi.data.oledb/1.25.2.4577": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3/OcYlUfJGcXeuq/PhRdOTO7DQ6ZhRZZyndQKpfCNsQXt8HVnT7c4Dm8NnokLqLoQzG2x3DiTsVnHErY2W6gDw==",
+      "path": "lcpi.data.oledb/1.25.2.4577",
+      "hashPath": "lcpi.data.oledb.1.25.2.4577.nupkg.sha512"
+    },
+    "lcpi.lib/2.14.0.1843": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wHgn1l06C+PvNb/OoqaYhd9Q+ln+Q81gnN4gg0BKwnUI8+XiMKPkpspuuS1uQF2TuByXk/epErfkbNhAC8I85Q==",
+      "path": "lcpi.lib/2.14.0.1843",
+      "hashPath": "lcpi.lib.2.14.0.1843.nupkg.sha512"
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "hashPath": "system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+    }
+  }
+}

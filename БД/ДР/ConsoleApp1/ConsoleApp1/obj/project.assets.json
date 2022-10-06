@@ -1,0 +1,379 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Dapper/2.0.123": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection.Emit.Lightweight": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Dapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.dll": {}
+        }
+      },
+      "FirebirdSql.Data.FirebirdClient/9.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FirebirdSql.Data.FirebirdClient.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FirebirdSql.Data.FirebirdClient.dll": {}
+        }
+      },
+      "lcpi.data.oledb/1.25.2.4577": {
+        "type": "package",
+        "dependencies": {
+          "lcpi.lib": "[2.14.0.1843]"
+        },
+        "compile": {
+          "lib/netstandard2.1/lcpi.data.oledb.nets2_1.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/lcpi.data.oledb.nets2_1.dll": {}
+        },
+        "resource": {
+          "lib/netstandard2.1/ru/lcpi.data.oledb.nets2_1.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "lcpi.lib/2.14.0.1843": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/lcpi.lib.nets2_1.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/lcpi.lib.nets2_1.dll": {}
+        },
+        "resource": {
+          "lib/netstandard2.1/ru/lcpi.lib.nets2_1.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "System.Reflection.Emit.Lightweight/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Dapper/2.0.123": {
+      "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "type": "package",
+      "path": "dapper/2.0.123",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.0.123.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net5.0/Dapper.dll",
+        "lib/net5.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
+    "FirebirdSql.Data.FirebirdClient/9.0.2": {
+      "sha512": "0fm8F5JOGCJWs8NakWv8l//zwMbwUzl6w8fBsnkK6O2aBTmJKud8PL661h78w4MbrSqP7811mG/7AGRyICdUiw==",
+      "type": "package",
+      "path": "firebirdsql.data.firebirdclient/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "firebird-logo.png",
+        "firebirdsql.data.firebirdclient.9.0.2.nupkg.sha512",
+        "firebirdsql.data.firebirdclient.nuspec",
+        "lib/net48/FirebirdSql.Data.FirebirdClient.dll",
+        "lib/net5.0/FirebirdSql.Data.FirebirdClient.dll",
+        "lib/net6.0/FirebirdSql.Data.FirebirdClient.dll",
+        "lib/netstandard2.0/FirebirdSql.Data.FirebirdClient.dll",
+        "lib/netstandard2.1/FirebirdSql.Data.FirebirdClient.dll",
+        "license.txt"
+      ]
+    },
+    "lcpi.data.oledb/1.25.2.4577": {
+      "sha512": "3/OcYlUfJGcXeuq/PhRdOTO7DQ6ZhRZZyndQKpfCNsQXt8HVnT7c4Dm8NnokLqLoQzG2x3DiTsVnHErY2W6gDw==",
+      "type": "package",
+      "path": "lcpi.data.oledb/1.25.2.4577",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net35-client/app.config.transform",
+        "content/net35-client/web.config.transform",
+        "content/net40-client/app.config.transform",
+        "content/net40-client/web.config.transform",
+        "content/net45/app.config.transform",
+        "content/net45/web.config.transform",
+        "content/net451/app.config.transform",
+        "content/net451/web.config.transform",
+        "content/net46/app.config.transform",
+        "content/net46/web.config.transform",
+        "content/net462/app.config.transform",
+        "content/net462/web.config.transform",
+        "content/net472/app.config.transform",
+        "content/net472/web.config.transform",
+        "content/net48/app.config.transform",
+        "content/net48/web.config.transform",
+        "content/net5.0-windows7.0/app.config.transform",
+        "content/net5.0-windows7.0/web.config.transform",
+        "content/net6.0-windows7.0/app.config.transform",
+        "content/net6.0-windows7.0/web.config.transform",
+        "content/netstandard2.0/app.config.transform",
+        "content/netstandard2.0/web.config.transform",
+        "content/netstandard2.1/app.config.transform",
+        "content/netstandard2.1/web.config.transform",
+        "images/logo2-128x128.png",
+        "lcpi.data.oledb.1.25.2.4577.nupkg.sha512",
+        "lcpi.data.oledb.nuspec",
+        "lib/net35-client/lcpi.data.oledb.net3_5.dll",
+        "lib/net35-client/lcpi.data.oledb.net3_5.pdb",
+        "lib/net35-client/ru/lcpi.data.oledb.net3_5.resources.dll",
+        "lib/net40-client/lcpi.data.oledb.net4.dll",
+        "lib/net40-client/lcpi.data.oledb.net4.pdb",
+        "lib/net40-client/ru/lcpi.data.oledb.net4.resources.dll",
+        "lib/net45/lcpi.data.oledb.net4_5.dll",
+        "lib/net45/lcpi.data.oledb.net4_5.pdb",
+        "lib/net45/ru/lcpi.data.oledb.net4_5.resources.dll",
+        "lib/net451/lcpi.data.oledb.net4_5_1.dll",
+        "lib/net451/lcpi.data.oledb.net4_5_1.pdb",
+        "lib/net451/ru/lcpi.data.oledb.net4_5_1.resources.dll",
+        "lib/net46/lcpi.data.oledb.net4_6.dll",
+        "lib/net46/lcpi.data.oledb.net4_6.pdb",
+        "lib/net46/ru/lcpi.data.oledb.net4_6.resources.dll",
+        "lib/net462/lcpi.data.oledb.net4_6_2.dll",
+        "lib/net462/lcpi.data.oledb.net4_6_2.pdb",
+        "lib/net462/ru/lcpi.data.oledb.net4_6_2.resources.dll",
+        "lib/net472/lcpi.data.oledb.net4_7_2.dll",
+        "lib/net472/lcpi.data.oledb.net4_7_2.pdb",
+        "lib/net472/ru/lcpi.data.oledb.net4_7_2.resources.dll",
+        "lib/net48/lcpi.data.oledb.net4_8_0.dll",
+        "lib/net48/lcpi.data.oledb.net4_8_0.pdb",
+        "lib/net48/ru/lcpi.data.oledb.net4_8_0.resources.dll",
+        "lib/net5.0-windows7.0/lcpi.data.oledb.net5_0_0.dll",
+        "lib/net5.0-windows7.0/lcpi.data.oledb.net5_0_0.pdb",
+        "lib/net5.0-windows7.0/ru/lcpi.data.oledb.net5_0_0.resources.dll",
+        "lib/net6.0-windows7.0/lcpi.data.oledb.net6_0_0.dll",
+        "lib/net6.0-windows7.0/lcpi.data.oledb.net6_0_0.pdb",
+        "lib/net6.0-windows7.0/ru/lcpi.data.oledb.net6_0_0.resources.dll",
+        "lib/netstandard2.0/lcpi.data.oledb.nets2_0.dll",
+        "lib/netstandard2.0/lcpi.data.oledb.nets2_0.pdb",
+        "lib/netstandard2.0/ru/lcpi.data.oledb.nets2_0.resources.dll",
+        "lib/netstandard2.1/lcpi.data.oledb.nets2_1.dll",
+        "lib/netstandard2.1/lcpi.data.oledb.nets2_1.pdb",
+        "lib/netstandard2.1/ru/lcpi.data.oledb.nets2_1.resources.dll",
+        "readme.txt"
+      ]
+    },
+    "lcpi.lib/2.14.0.1843": {
+      "sha512": "wHgn1l06C+PvNb/OoqaYhd9Q+ln+Q81gnN4gg0BKwnUI8+XiMKPkpspuuS1uQF2TuByXk/epErfkbNhAC8I85Q==",
+      "type": "package",
+      "path": "lcpi.lib/2.14.0.1843",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/logo2-128x128.png",
+        "lcpi.lib.2.14.0.1843.nupkg.sha512",
+        "lcpi.lib.nuspec",
+        "lib/net35-client/lcpi.lib.net3_5.dll",
+        "lib/net35-client/lcpi.lib.net3_5.pdb",
+        "lib/net35-client/ru/lcpi.lib.net3_5.resources.dll",
+        "lib/net40-client/lcpi.lib.net4.dll",
+        "lib/net40-client/lcpi.lib.net4.pdb",
+        "lib/net40-client/ru/lcpi.lib.net4.resources.dll",
+        "lib/net45/lcpi.lib.net4_5.dll",
+        "lib/net45/lcpi.lib.net4_5.pdb",
+        "lib/net45/ru/lcpi.lib.net4_5.resources.dll",
+        "lib/net451/lcpi.lib.net4_5_1.dll",
+        "lib/net451/lcpi.lib.net4_5_1.pdb",
+        "lib/net451/ru/lcpi.lib.net4_5_1.resources.dll",
+        "lib/net46/lcpi.lib.net4_6.dll",
+        "lib/net46/lcpi.lib.net4_6.pdb",
+        "lib/net46/ru/lcpi.lib.net4_6.resources.dll",
+        "lib/net462/lcpi.lib.net4_6_2.dll",
+        "lib/net462/lcpi.lib.net4_6_2.pdb",
+        "lib/net462/ru/lcpi.lib.net4_6_2.resources.dll",
+        "lib/net472/lcpi.lib.net4_7_2.dll",
+        "lib/net472/lcpi.lib.net4_7_2.pdb",
+        "lib/net472/ru/lcpi.lib.net4_7_2.resources.dll",
+        "lib/net48/lcpi.lib.net4_8_0.dll",
+        "lib/net48/lcpi.lib.net4_8_0.pdb",
+        "lib/net48/ru/lcpi.lib.net4_8_0.resources.dll",
+        "lib/net5.0-windows7.0/lcpi.lib.net5_0_0.dll",
+        "lib/net5.0-windows7.0/lcpi.lib.net5_0_0.pdb",
+        "lib/net5.0-windows7.0/ru/lcpi.lib.net5_0_0.resources.dll",
+        "lib/net6.0-windows7.0/lcpi.lib.net6_0_0.dll",
+        "lib/net6.0-windows7.0/lcpi.lib.net6_0_0.pdb",
+        "lib/net6.0-windows7.0/ru/lcpi.lib.net6_0_0.resources.dll",
+        "lib/netstandard2.0/lcpi.lib.nets2_0.dll",
+        "lib/netstandard2.0/lcpi.lib.nets2_0.pdb",
+        "lib/netstandard2.0/ru/lcpi.lib.nets2_0.resources.dll",
+        "lib/netstandard2.1/lcpi.lib.nets2_1.dll",
+        "lib/netstandard2.1/lcpi.lib.nets2_1.pdb",
+        "lib/netstandard2.1/ru/lcpi.lib.nets2_1.resources.dll",
+        "readme.txt"
+      ]
+    },
+    "System.Reflection.Emit.Lightweight/4.7.0": {
+      "sha512": "a4OLB4IITxAXJeV74MDx49Oq2+PsF6Sml54XAFv+2RyWwtDBcabzoxiiJRhdhx+gaohLh4hEGCLQyBozXoQPqA==",
+      "type": "package",
+      "path": "system.reflection.emit.lightweight/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "lib/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "lib/netstandard2.1/_._",
+        "lib/portable-net45+wp8/_._",
+        "lib/wp80/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.dll",
+        "ref/netstandard2.0/System.Reflection.Emit.Lightweight.xml",
+        "ref/netstandard2.1/_._",
+        "ref/portable-net45+wp8/_._",
+        "ref/wp80/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.dll",
+        "runtimes/aot/lib/netcore50/System.Reflection.Emit.Lightweight.xml",
+        "system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
+        "system.reflection.emit.lightweight.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Dapper >= 2.0.123",
+      "FirebirdSql.Data.FirebirdClient >= 9.0.2",
+      "lcpi.data.oledb >= 1.25.2.4577"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\artem\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\3 курс 1 семестр\\БД\\ДР\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectName": "ConsoleApp1",
+      "projectPath": "D:\\3 курс 1 семестр\\БД\\ДР\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+      "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
+      "outputPath": "D:\\3 курс 1 семестр\\БД\\ДР\\ConsoleApp1\\ConsoleApp1\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\artem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "Dapper": {
+            "target": "Package",
+            "version": "[2.0.123, )"
+          },
+          "FirebirdSql.Data.FirebirdClient": {
+            "target": "Package",
+            "version": "[9.0.2, )"
+          },
+          "lcpi.data.oledb": {
+            "target": "Package",
+            "version": "[1.25.2.4577, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.22, 3.1.22]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
