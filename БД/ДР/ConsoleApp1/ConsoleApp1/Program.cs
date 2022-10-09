@@ -71,7 +71,8 @@ namespace ConsoleApp1
             string pole = Console.ReadLine();
             Console.Write("From: ");
             string from = Console.ReadLine();
-            string sql = command + " " + pole + " from " + from;
+            string sql = command + " " + "id" + " from " + "post";
+            
             var cmd = new OleDbCommand(sql, cn, tr);
             var reader = cmd.ExecuteReader();
             int n = 0;
