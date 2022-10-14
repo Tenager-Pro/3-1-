@@ -1,0 +1,85 @@
+(defclass A (is-a USER)  
+(role concrete)
+(slot x  (create-accessor write)  (default 2))
+)
+
+(definstances A-OBJECTS 
+(al of A)
+(of A  (x 65))
+)
+
+(defclass B (is-a USER) (role concrete)
+(slot x (create-accessor read) 
+(default abc))
+)
+
+(make-instance b of B)
+
+(sym-cat  (send [b] get-x)  def) 
+
+(send  [b]  put-x "New value.")
+
+(send [b] delete)
+
+
+(defclass D  (is-a USER) 
+(role concrete)
+(slot foo (create-accessor write)) 
+(slot bar  (create-accessor write))
+)
+
+(defmessage-handler D print-args   (?a ?b $?c)
+(printout t  (instance-name ?self)   " " ?a " " ?b 
+" and "  (length$ ?c)   " extras:  " ?c crlf)
+)
+
+
+
+
+(defclass train (is-a USER)  
+(role abstract)
+(slot wagons (create-accessor write)  (default 0))
+(slot speed (create-accessor write)  (default 0))
+)
+
+
+(defclass highSpeedTrain (is-a train)  
+(role concrete)
+(slot maxSpeed (create-accessor write)  (default 0))
+)
+
+(defclass freightTrain (is-a train)  
+(role concrete)
+(slot maxWeight (create-accessor write)  (default 0))
+)	
+
+(defclass electricTrain (is-a train)  
+(role concrete)
+(slot maxContain (create-accessor write)  (default 0))
+)
+
+(defclass freightTrain (is-a train) 
+(role concrete)
+(slot maxWeight  (create-accessor write) 
+(storage shared)(default 0))
+
+)
+
+
+
+(make-instance highSpeedTrain1 of highSpeedTrain)
+(make-instance highSpeedTrain2 of highSpeedTrain)
+(make-instance highSpeedTrain3 of highSpeedTrain)
+
+(send [highSpeedTrain1] put-wagons 3)
+(send [highSpeedTrain1] put-speed 200)
+(send [highSpeedTrain1] put-maxSpeed 320)
+
+(defmessage-handler highSpeedTrain print-args   (?wagons ?speed ?maxSpeed)
+(printout t  (instance-name ?self)   " Wagons: " ?wagons "Speed: " ?speed 
+" Max speed: " ?maxSpeed crlf)
+)
+
+(send [highSpeedTrain1] print-args 5 200 320)
+
+(modify-instance highSpeedTrain1 (wagons 10))
