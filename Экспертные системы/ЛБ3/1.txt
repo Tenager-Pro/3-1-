@@ -73,7 +73,7 @@
 
 (send [highSpeedTrain1] put-wagons 3)
 (send [highSpeedTrain1] put-speed 200)
-(send [highSpeedTrain1] put-maxSpeed 320)
+	
 
 (defmessage-handler highSpeedTrain print-args   (?wagons ?speed ?maxSpeed)
 (printout t  (instance-name ?self)   " Wagons: " ?wagons "Speed: " ?speed 

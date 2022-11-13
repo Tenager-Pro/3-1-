@@ -1,0 +1,54 @@
+(printout t "Hello, world!" crlf)
+
+(open "data.txt" mydata "w") 
+(printout mydata "red green")
+(close)
+(readline mydata)
+
+(format t "Hello World!%n")
+
+(rename "data.txt" "myData.txt")
+
+(nth$ 3 (create$ а b с d е f g))
+
+(member$ blue (create$ red 3 "text" 8.7 blue))
+(member$ 4 (create$ red 3 "text" 8.7 blue))
+
+(subsetp (create$ hamraer saw drill) (create$ hammer drill wrench pliers saw)) 
+
+(explode$ "1 2 abc 3 4 \"abc\" V'defV")
+
+(rest? (create$ abc))
+
+(length$ (create$ a b с d е f g))
+
+(deffunction count ($?arg)
+(length $?arg)
+)
+
+(count 1 2 3 four "five")
+
+(replace-member$ (create$  a b a b) 
+(create$ a b a) a b)
+
+(str-cat "super" "star")
+
+(sub-string 3 8 "abcdefghijkl")
+
+(str-index "def" "abcdefghi")
+
+(string-to-field "3.4")
+
+(eval "(+ 3 4)")
+
+(max 2 3 4)
+
+(min 2 3 4)
+
+(max (min 2 3) (min 3 4))
+
+(abs -3) 
+
+(rad-deg (pi))
+
+(seed 100)
