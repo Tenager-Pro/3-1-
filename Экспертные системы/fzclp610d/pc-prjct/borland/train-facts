@@ -1,0 +1,6 @@
+(initial-fact) CF 1.00 
+(train (name "Shanghai Maglev") (country "China") (speed fast) (contain 574) (long short) (height high) (quantity 8)) CF 1.00 
+(train (name "Shinkansen") (country "Japan") (speed medium) (contain 660) (long short) (height medium) (quantity 9)) CF 1.00 
+(train (name "Frecciarossa") (country "Italy") (speed medium) (contain 540) (long medium) (height high) (quantity 11)) CF 1.00 
+(train (name "RENFE") (country "Spain") (speed medium) (contain 506) (long medium) (height medium) (quantity 10)) CF 1.00 
+(train (name "Haramain") (country "Saudi Arabia") (speed medium) (contain 540) (long medium) (height medium) (quantity 10)) CF 1.00 
