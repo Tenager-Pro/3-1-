@@ -1,0 +1,48 @@
+(deftemplate bird-weight
+    0 3000 g
+    (
+        (small (z 0 250))
+        (large (s 500 3000))
+        (medium not [ large or small ])
+    )
+)
+
+(deftemplate bird-length
+    0 120 cm
+    (
+        (small (z 0 25))
+        (large (s 60 120))
+        (medium not [ large or small ])
+    )
+)
+
+(defrule Rule01
+ (bird-weight small) => (assert (bird-length small)) )
+(defrule Rule02
+ (bird-weight medium) => (assert (bird-length medium)) )
+(defrule Rule03
+ (bird-weight large) => (assert (bird-length large)) )
+(defrule start
+ (initial-fact)
+ =>
+ ;(set-fuzzy-inference-type max-prod)
+ (set-fuzzy-inference-type max-min)
+ (printout t crlf "===> Enter weight: ")
+ (bind ?t (read))
+ (if (eq ?t 0)
+ then (halt)
+ else (assert (bird-weight (pi 0 ?t)))
+ )
+)
+(defrule ShowResults
+ (declare (salience -100))
+ ?ind <- (bird-length ?d)
+ =>
+ (plot-fuzzy-value t "*" nil nil ?ind)
+ (printout t "===> Inference Type: "
+ (get-fuzzy-inference-type) crlf)
+ (printout t "===> Defuzzification:" crlf)
+ (printout t " COG algorithm: "
+ (moment-defuzzify ?ind) crlf)
+ (printout t " MOM algorithm: "
+ (maximum-defuzzify ?ind) crlf))

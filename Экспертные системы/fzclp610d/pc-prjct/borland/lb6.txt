@@ -1,0 +1,48 @@
+(deftemplate train-height
+    2000 5000 mm
+    (
+        (low (z 2000 3000))
+        (high (s 4000 5000))
+        (medium not [ high or low ])
+    )
+)
+
+(deftemplate train-length
+    100 400 m
+    (
+        (short (z 100 200))
+        (long (s 300 400))
+        (medium not [ long or short ])
+    )
+)
+
+(defrule Rule01
+ (train-height low) => (assert (train-length short)) )
+(defrule Rule02
+ (train-height medium) => (assert (train-length medium)) )
+(defrule Rule03
+ (train-height high) => (assert (train-length long)) )
+(defrule start
+ (initial-fact)
+ =>
+ ;(set-fuzzy-inference-type max-prod)
+ (set-fuzzy-inference-type max-min)
+ (printout t crlf "===> Enter height: ")
+ (bind ?t (read))
+ (if (eq ?t 0)
+ then (halt)
+ else (assert (train-height (pi 0 ?t)))
+ )
+)
+(defrule ShowResults
+ (declare (salience -100))
+ ?ind <- (train-length ?d)
+ =>
+ (plot-fuzzy-value t "*" nil nil ?ind)
+ (printout t "===> Inference Type: "
+ (get-fuzzy-inference-type) crlf)
+ (printout t "===> Defuzzification:" crlf)
+ (printout t " COG algorithm: "
+ (moment-defuzzify ?ind) crlf)
+ (printout t " MOM algorithm: "
+ (maximum-defuzzify ?ind) crlf))
