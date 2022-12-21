@@ -1,0 +1,101 @@
+(defglobal MAIN ?*x* = 0)
+(defglobal MAIN ?*y* = 0)
+(defglobal MAIN ?*z* = 0)
+(defglobal MAIN ?*i* = 1)
+(defglobal MAIN ?*j* = 0)
+(defglobal MAIN ?*num* = 0)
+(defglobal MAIN ?*pro* = 0)
+(defglobal MAIN ?*maxi* = 0)
+(defglobal MAIN ?*safe* = 0)
+(defglobal MAIN ?*str* = "")
+(defglobal MAIN ?*str2* = "")
+
+
+
+
+
+
+(deffunction MAIN::maxing 
+	(?input_file)
+
+(open ?input_file inputing)
+	(bind ?*x* (integer (read inputing)))
+	(bind ?*y* (integer (read inputing)))
+
+	(while (> ?*x* 0)
+		(while (> ?*y* 0)
+		(bind ?*z* (integer (read inputing)))
+		(if (= ?*z* 1)
+			then
+			(bind ?*maxi* (+ ?*maxi* 1))
+			(if(> ?*maxi* ?*safe*)
+				then
+				(bind ?*safe* ?*maxi*)
+			)
+			else
+				(bind ?*maxi* (* ?*maxi* 0))
+			)
+		(bind ?*y* (- ?*y* 1))
+		)
+	(bind ?*maxi* (* ?*maxi* 0))
+	(bind ?*x* (- ?*x* 1))
+	)
+(close inputing)
+(printout t "Max: " ?*safe* crlf)
+
+
+(bind ?*str* "")	
+(open ?input_file inputing)
+(bind ?*x* (integer (read inputing)))
+(bind ?*y* (integer (read inputing)))
+(bind ?*j* (* ?*j* 0))
+(bind ?*i* (* ?*x* ?*y*))		
+(while (< ?*j* ?*i*)
+(bind ?*str2* (read inputing))
+(bind ?*str* (create$ ?*str* ?*str2*))
+
+(printout t ?*str* crlf)	
+(bind ?*j* (+ ?*j* 1))
+)
+(close inputing)
+(bind ?*str* (delete$ ?*str* 1 1))
+(printout t ?*str* crlf)
+
+(bind ?*i* 1)
+(bind ?*j* 0)
+
+(while (<=   ?*i*  ?*x*)
+		(bind ?*num* 0)
+		(bind ?*j* 0)
+		(bind ?*maxi* 0)
+        (printout t "i" ?*i* crlf)
+        (printout t "x" ?*x* crlf)
+        (printout t "y" ?*y* crlf)
+        (printout t "j" ?*j* crlf)
+		(while (< ?*j*  ?*y*)
+			(bind ?*pro* (* ?*y* ?*j*))
+			(bind ?*num* (+ ?*i* ?*pro*))
+			(bind ?*z* (nth$ ?*num* ?*str*))
+            (printout t "z" ?*z* crlf)
+            (printout t "num" ?*num* crlf)
+			(if (= ?*z* 1)
+				then
+				(bind ?*maxi* (+ ?*maxi* 1))
+				(if(> ?*maxi* ?*safe*)
+					then
+					(bind ?*safe* ?*maxi*)
+				)
+			else
+				(bind ?*maxi* (* ?*maxi* 0))
+			)
+		(bind ?*j* (+ ?*j* 1))
+		)
+	(bind ?*i* (+ ?*i* 1))
+	)
+(printout t "Max: " ?*safe* crlf)
+
+
+(open D:\Clips\output.txt output "w") 
+    (printout output ?*safe*)
+    (close output)
+)

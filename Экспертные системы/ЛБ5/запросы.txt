@@ -1,0 +1,143 @@
+(deftemplate speed_train
+10 500 km/h (
+(slow (10 1) (125 0))
+(medium (125 1) (375 0))
+(fast (375 1) (500 0))
+)
+)
+
+(deftemplate long_train
+100 400 m (
+(short (100 1) (200 0))
+(medium (200 1) (300 0))
+(long (300 1) (400 0))
+)
+)
+
+(deftemplate height_train
+2000 5000 mm (
+(low (2000 1) (3000 0))
+(medium (3000 1) (4000 0))
+(high (4000 1) (5000 0))
+)
+)
+
+
+(deftemplate MAIN::train
+   (slot name (type STRING))
+   (slot country (type STRING))
+   (slot speed (type FUZZY-VALUE speed_train))
+   (slot contain (type INTEGER))
+   (slot long (type FUZZY-VALUE long_train))
+   (slot height (type FUZZY-VALUE height_train))
+   (slot quantity (type INTEGER))
+)
+
+(deffacts trains 
+(train 
+	(name "Shanghai Maglev") 
+	(country "China") 
+	(speed fast) 
+	(contain 574) 
+	(long short) 
+	(height high) 
+	(quantity 8))
+(train 
+	(name "Shinkansen") 
+	(country "Japan") 
+	(speed medium) 
+	(contain 660) 
+	(long short) 
+	(height medium) 
+	(quantity 9))
+(train 
+	(name "Frecciarossa") 
+	(country "Italy") 
+	(speed medium) 
+	(contain 540) 
+	(long medium) 
+	(height high) 
+	(quantity 11))
+(train 
+	(name "RENFE") 
+	(country "Spain") 
+	(speed medium) 
+	(contain 506) 
+	(long medium) 
+	(height medium) 
+	(quantity 10))
+(train 
+	(name "Haramain") 
+	(country "Saudi Arabia") 
+	(speed medium) 
+	(contain 540) 
+	(long medium) 
+	(height medium) 
+	(quantity 10))
+)
+
+
+(defrule isHighSpeed_based_on_speed
+    (declare (CF 0.8) )
+    (train (speed fast) (name ?n))
+    =>
+    (assert (out ?n 'High-Speed'))
+)
+
+
+(defrule isHighSpeed_based_on_speed_and_long
+    (declare (CF 0.9) )
+    (train (speed slow) (name ?n) (long short))
+    =>
+    (assert (out ?n "High-Speed and short"))
+)
+
+(defrule isBigTrain_based_on_long
+    (declare (CF 0.7) )
+    (train (long long) (name ?n))
+    =>
+    (assert (out ?n 'Long Train'))
+)
+
+(defrule isBigTrain_based_on_long_and_height
+    (declare (CF 0.8) )
+    (train (long medium) (name ?n) (height high))
+    =>
+    (assert (out ?n 'Long and height Train'))
+)
+
+(defrule isBigTrain_based_on_long_and_height_and_contain
+    (declare (CF 0.9) )
+    (train (long medium) (name ?n) (height high) (contain ?y))
+    (test (>= ?y 500))
+    =>
+    (assert (out ?n 'Big Train'))
+)
+
+(defrule isComfortTrain_based_on_speed_and_height
+    (declare (CF 0.7) )
+    (train (speed medium) (name ?n) (height medium))
+    =>
+    (assert (out ?n 'Comfort Train'))
+)
+
+(defrule isComfortTrain_based_on_speed_and_height_and_long
+    (declare (CF 0.8) )
+    (train (speed medium) (long medium) (name ?n) (height medium))
+    =>
+    (assert (out ?n 'Business Train'))
+)
+
+(defrule isComfortTrain_based_on_speed_and_height_and_long_for_VIP
+    (declare (CF 0.9) )
+    (train (speed fast) (long short) (name ?n) (height medium) (quantity ?y))
+    (test (<= ?y 8))
+    =>
+    (assert (out ?n 'VIP Train'))
+)
+
+(reset)
+(save-facts train-facts)
+
+(run)
+
